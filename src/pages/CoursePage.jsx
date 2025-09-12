@@ -3,112 +3,13 @@ import { useState } from "react";
 import { Award, Play, Heart, Lightbulb, Book, Languages } from "lucide-react";
 import CourseCard from "../components/CourseCard";
 import { useNavigate } from "react-router-dom";
+import { courses, categories } from "../data/courseData";
 
 const CoursePage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const navigate = useNavigate();
 
-  const courses = [
-    {
-      id: "noorani-qaida",
-      title: "Noorani Qaida Course",
-      description:
-        "Master Quranic reading fundamentals with certified teachers. Step-by-step guidance for beginners.",
-      icon: <BookOpen className="w-8 h-8" />,
-      duration: "3-4 Months",
-      level: "Beginner",
-      category: "Foundation",
-    },
-    {
-  id: "tajweed",
-  title: "Tajweed Course",
-  intro:
-    "Quran recitation is not just reading, it's a sacred art that demands precision and mastery through the rules of Tajweed, enhancing both its beauty and spiritual depth.",
-  about:
-    "The Tajweed Course is a focused learning program designed to enhance Quran recitation by teaching the principles of Tajweed. Tajweed is the set of rules that ensure each Arabic letter is pronounced correctly and beautifully, preserving the meaning and rhythm of the Quran.",
-  outcomes: [
-    "Teach correct pronunciation of Arabic letters.",
-    "Cover essential and advanced Tajweed rules.",
-    "Improve recitation fluency and accuracy.",
-    "Support memorization with proper Tajweed.",
-    "Emphasize the role of Tajweed in understanding the Quran.",
-  ],
-  structure: [
-    "Tajweed Fundamentals: Importance of Tajweed and its role in beautifying recitation.",
-    "Arabic Phonetics: Mastering letter articulation (Makharij) and characteristics (Sifaat).",
-    "Basic Rules: Introduction to Madd, Sukoon, and rules of Nun and Meem Mushaddad.",
-    "Advanced Concepts: Learning Qalqalah, Ghunna, Idgham, Ikhfa, and Iqlab.",
-    "Practical Recitation: Supervised practice with real-time correction.",
-    "Memorization Skills: Techniques for retaining verses with correct Tajweed.",
-  ],
-  icon: <Play className="w-8 h-8" />,
-  duration: "6-8 Months",
-  level: "Intermediate",
-  category: "Recitation",
-}
-,
-    {
-      id: "hifz",
-      title: "Memorization of Quran",
-      description:
-        "Personalized Hifz programs with proven techniques tailored to your pace and schedule.",
-      icon: <Lightbulb className="w-8 h-8" />,
-      duration: "2-4 Years",
-      level: "Advanced",
-      category: "Memorization",
-    },
-    {
-      id: "islamic-teaching",
-      title: "Islamic Teaching",
-      description:
-        "Comprehensive study of Aqeedah, Fiqh, Seerah, and values. Build a strong Islamic foundation.",
-      icon: <Heart className="w-8 h-8" />,
-      duration: "12 Months",
-      level: "All Levels",
-      category: "Islamic Studies",
-    },
-    {
-      id: "arabic",
-      title: "Arabic Language",
-      description:
-        "Learn Classical and Modern Arabic to understand Quran and communicate confidently.",
-      icon: <Languages className="w-8 h-8" />,
-      duration: "10 Months",
-      level: "All Levels",
-      category: "Language",
-    },
-    {
-      id: "translation",
-      title: "Quran Translation",
-      description:
-        "Understand Quranic meanings with detailed translations and contextual explanations.",
-      icon: <Book className="w-8 h-8" />,
-      duration: "8 Months",
-      level: "Intermediate",
-      category: "Understanding",
-    },
-    {
-      id: "tafseer",
-      title: "Tafseer of Quran",
-      description:
-        "Explore deep exegesis and commentary with historical context and wisdom of verses.",
-      icon: <Award className="w-8 h-8" />,
-      duration: "15 Months",
-      level: "Advanced",
-      category: "Advanced Studies",
-    },
-  ];
 
-  const categories = [
-    "All",
-    "Foundation",
-    "Recitation",
-    "Memorization",
-    "Islamic Studies",
-    "Language",
-    "Understanding",
-    "Advanced Studies",
-  ];
 
   const filteredCourses =
     selectedCategory === "All"
