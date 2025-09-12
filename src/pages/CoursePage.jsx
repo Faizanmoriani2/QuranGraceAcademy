@@ -7,9 +7,10 @@ import { useNavigate } from "react-router-dom";
 const CoursePage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const navigate = useNavigate();
+
   const courses = [
     {
-      id: 1,
+      id: "noorani-qaida",
       title: "Noorani Qaida Course",
       description:
         "Master Quranic reading fundamentals with certified teachers. Step-by-step guidance for beginners.",
@@ -19,17 +20,35 @@ const CoursePage = () => {
       category: "Foundation",
     },
     {
-      id: 2,
-      title: "Quran with Tajweed",
-      description:
-        "Learn to recite beautifully with proper Tajweed rules and rhythm under expert guidance.",
-      icon: <Play className="w-8 h-8" />,
-      duration: "6-8 Months",
-      level: "Intermediate",
-      category: "Recitation",
-    },
+  id: "tajweed",
+  title: "Tajweed Course",
+  intro:
+    "Quran recitation is not just reading, it's a sacred art that demands precision and mastery through the rules of Tajweed, enhancing both its beauty and spiritual depth.",
+  about:
+    "The Tajweed Course is a focused learning program designed to enhance Quran recitation by teaching the principles of Tajweed. Tajweed is the set of rules that ensure each Arabic letter is pronounced correctly and beautifully, preserving the meaning and rhythm of the Quran.",
+  outcomes: [
+    "Teach correct pronunciation of Arabic letters.",
+    "Cover essential and advanced Tajweed rules.",
+    "Improve recitation fluency and accuracy.",
+    "Support memorization with proper Tajweed.",
+    "Emphasize the role of Tajweed in understanding the Quran.",
+  ],
+  structure: [
+    "Tajweed Fundamentals: Importance of Tajweed and its role in beautifying recitation.",
+    "Arabic Phonetics: Mastering letter articulation (Makharij) and characteristics (Sifaat).",
+    "Basic Rules: Introduction to Madd, Sukoon, and rules of Nun and Meem Mushaddad.",
+    "Advanced Concepts: Learning Qalqalah, Ghunna, Idgham, Ikhfa, and Iqlab.",
+    "Practical Recitation: Supervised practice with real-time correction.",
+    "Memorization Skills: Techniques for retaining verses with correct Tajweed.",
+  ],
+  icon: <Play className="w-8 h-8" />,
+  duration: "6-8 Months",
+  level: "Intermediate",
+  category: "Recitation",
+}
+,
     {
-      id: 3,
+      id: "hifz",
       title: "Memorization of Quran",
       description:
         "Personalized Hifz programs with proven techniques tailored to your pace and schedule.",
@@ -39,7 +58,7 @@ const CoursePage = () => {
       category: "Memorization",
     },
     {
-      id: 4,
+      id: "islamic-teaching",
       title: "Islamic Teaching",
       description:
         "Comprehensive study of Aqeedah, Fiqh, Seerah, and values. Build a strong Islamic foundation.",
@@ -49,7 +68,7 @@ const CoursePage = () => {
       category: "Islamic Studies",
     },
     {
-      id: 5,
+      id: "arabic",
       title: "Arabic Language",
       description:
         "Learn Classical and Modern Arabic to understand Quran and communicate confidently.",
@@ -59,7 +78,7 @@ const CoursePage = () => {
       category: "Language",
     },
     {
-      id: 6,
+      id: "translation",
       title: "Quran Translation",
       description:
         "Understand Quranic meanings with detailed translations and contextual explanations.",
@@ -69,7 +88,7 @@ const CoursePage = () => {
       category: "Understanding",
     },
     {
-      id: 7,
+      id: "tafseer",
       title: "Tafseer of Quran",
       description:
         "Explore deep exegesis and commentary with historical context and wisdom of verses.",
@@ -105,9 +124,7 @@ const CoursePage = () => {
             <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center shadow-xl">
               <BookOpen className="w-12 h-12 text-white" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Courses
-            </h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Courses</h1>
             <p className="text-lg md:text-xl mb-8 text-cyan-100 max-w-3xl mx-auto">
               Discover Quranic and Islamic courses designed to nurture your
               spiritual growth. Learn from certified teachers with personalized
@@ -138,7 +155,22 @@ const CoursePage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCourses.map((course, index) => (
-              <CourseCard key={course.id} course={course} index={index} />
+              <CourseCard
+                key={course.id}
+                course={course}
+                index={index}
+                onLearnMore={() =>
+                  navigate(`/courses/${course.id}`, {
+                    state: {
+                      title: course.title,
+                      intro: course.intro,
+                      about: course.about,
+                      outcomes: course.outcomes,
+                      structure: course.structure,
+                    },
+                  })
+                }
+              />
             ))}
           </div>
         </div>
@@ -154,14 +186,16 @@ const CoursePage = () => {
           teachers and flexible learning options.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <button 
-          onClick={()=> navigate('/free-trial')}
-          className="bg-white text-teal-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition cursor-pointer">
+          <button
+            onClick={() => navigate("/free-trial")}
+            className="bg-white text-teal-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition cursor-pointer"
+          >
             Get 3 Days Free Trial
           </button>
-          <button 
-          onClick={()=> navigate('/contact')}
-          className="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-teal-600 transition cursor-pointer">
+          <button
+            onClick={() => navigate("/contact")}
+            className="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-teal-600 transition cursor-pointer"
+          >
             Contact Our Team
           </button>
         </div>

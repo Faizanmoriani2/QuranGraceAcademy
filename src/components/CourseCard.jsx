@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Star, Clock, Users, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const CourseCard = ({ course, index }) => {
+const CourseCard = ({ course, index, onLearnMore }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const gradients = [
@@ -65,15 +65,15 @@ const CourseCard = ({ course, index }) => {
         </div>
 
         {/* Action */}
-        <div className="flex items-center justify-between">
-          <Link
-            to={`/courses/${course.id}`}
-            className="bg-white text-teal-700 px-5 py-2.5 rounded-full font-semibold hover:bg-gray-100 flex items-center space-x-2 group transition"
-          >
-            <span>Learn More</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+<div className="flex items-center justify-between">
+  <button
+    onClick={() => onLearnMore(course)} // ✅ call passed prop
+    className="bg-white text-teal-700 px-5 py-2.5 rounded-full font-semibold hover:bg-gray-100 flex items-center space-x-2 group transition cursor-pointer"
+  >
+    <span>Learn More</span>
+    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+  </button>
+</div>
       </div>
     </div>
   );
