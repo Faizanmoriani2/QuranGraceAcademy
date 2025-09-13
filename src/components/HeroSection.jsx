@@ -3,8 +3,7 @@ import logo from "../assets/Final.png";
 import { motion } from "framer-motion";
 import { Moon, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import lamp from "../assets/lamp.jpg"
-import Book from "./Book";
+import bgImage from "../assets/ai-bg.webp"
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -40,11 +39,11 @@ const HeroSection = () => {
       {/* Background with Quran image + overlay */}
       <div className="absolute inset-0">
         <img
-          src={lamp}
+          src={bgImage}
           alt="Quran background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 via-cyan-900/30 to-teal-800/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/70 via-cyan-900/60 to-teal-800/80"></div>
       </div>
 
       {/* Decorative Animated Elements */}
@@ -84,13 +83,15 @@ const HeroSection = () => {
       <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
         {/* Logo */}
         <div className="mb-10 flex justify-center">
+            <img 
+            className="w-62 h-62 md:w-40 md:h-40 object-contain"
+            src={logo} 
+            alt=",ogo" />
           <div className="mt-10 md:mt-0">
        
       </div>
         </div>
-      <div className="w-[500px] h-[400px]">
-              <Book />
-            </div>
+      
         {/* Rotating tagline */}
         <div className="h-20 flex items-center justify-center">
           <p className="text-2xl md:text-3xl font-light transition-all duration-1000 transform">

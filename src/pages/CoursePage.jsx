@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Award, Play, Heart, Lightbulb, Book, Languages } from "lucide-react";
 import CourseCard from "../components/CourseCard";
 import { useNavigate } from "react-router-dom";
-import { courses, categories } from "../data/courseData";
+import { courses, categories } from "../data/courseData.jsx";
 
 const CoursePage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
