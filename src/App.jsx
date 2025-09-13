@@ -12,6 +12,7 @@ import FreeTrialPage from "./pages/FreeTrialPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import CourseDetails from "./pages/CourseDetails.jsx";
+import TawkChat from "./components/TawkChat.jsx";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/courses/:id" element={<CourseDetails />} />
       </Routes>
       <Footer />
+      <TawkChat />
     </>
   );
 }
