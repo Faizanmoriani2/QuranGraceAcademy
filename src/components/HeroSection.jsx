@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import quranImg from "../assets/quran.webp"; 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg.png"; // background image in png format
+import bg from "../assets/bg.webp"; // background image in png format
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
