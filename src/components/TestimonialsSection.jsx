@@ -5,28 +5,28 @@ import { motion } from "framer-motion";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Ahmed Hassan",
-      location: "London, UK",
+      name: "Mrs. Sohail",
+      location: "Melbourne, Australia",
       rating: 5,
-      text: "Excellent teaching methods and very patient teachers. My children love their Quran classes and have improved significantly in their recitation."
+      text: "100% recommended specially for parents struggling to teach kids by themselves this academy is doing such a good job. Their teachers are very dedicated and their teaching method is absolutely amazing. My son and daughter are so excited before their classes every day, their teacher are so qualified and patience with my kids"
     },
     {
-      name: "Aisha Rahman",
-      location: "Toronto, Canada",
+      name: "Ms. Yusra",
+      location: "Melbourne, Australia",
       rating: 5,
-      text: "The flexible timing is perfect for our busy schedule. The teachers are knowledgeable and create a wonderful learning environment."
+      text: "Thank you guys. Your approach to teaching made learning fun and fostered the love of knowledge. Your students could not have done it without your help, appreciate how my daughter's teacher is always related to the lessons to real life examples that allow the material to make more logical sense. Jazakumullahu khairan."
     },
     {
-      name: "Omar Abdullah",
-      location: "Sydney, Australia",
+      name: "Ms. Nahida",
+      location: "Los Angeles, US",
       rating: 5,
-      text: "Amazing academy with qualified teachers. The personalized approach has helped me understand the Quran better than ever before."
+      text: "I'm in my 50's right now but unfortunately i wouldn't recite the holy Quran a few years back but now by the grace of Allah I can read multiple chapters of the Holy Quran with tajweed, I'm learning for 2 two years in this academy. I'm so impressed by this academy and my teacher as well. I'm thankful for everything"
     },
     {
-      name: "Fatima Al-Zahra",
-      location: "Dubai, UAE",
+      name: "Mrs. Souleymane",
+      location: "Gatineau, canada",
       rating: 5,
-      text: "The 3-day free trial convinced me to join. The quality of education and the spiritual growth I've experienced is remarkable."
+      text: "Salam, i just wanted to say thank you for such an incredible academy. Classes are always engaging and enjoyable. I really appreciate my teacher's patience and tips and tricks to help me remember the lessons. The way she incorporates islamic basic knowledge into our lessons is really valuable and helps me build a deeper understanding."
     }
   ];
 

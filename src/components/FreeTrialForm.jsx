@@ -73,32 +73,64 @@ const FreeTrialForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form Data:', formData);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    // Generate timestamp
+    const timestamp = new Date().toLocaleString("en-US", {
+      timeZone: "Asia/Karachi", // adjust timezone
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    const response = await fetch("https://sheetdb.io/api/v1/vr9ocl3ezk29a", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        data: [
+          {
+            ...formData,
+            weekDays: formData.weekDays.join(","), // convert array
+            timestamp, // add timestamp
+          },
+        ],
+      }),
+    });
+
+    console.log("Form submitted!", await response.json());
     setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
+
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
-        fullName: '',
-        email: '',
-        phoneNumber: '',
-        postalCode: '',
-        country: '',
-        address: '',
-        gender: '',
-        relation: '',
-        howDidYouKnow: '',
-        course: '',
-        preferredTime: '',
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        postalCode: "",
+        country: "",
+        address: "",
+        gender: "",
+        relation: "",
+        howDidYouKnow: "",
+        course: "",
+        preferredTime: "",
         weekDays: [],
-        message: ''
+        message: "",
       });
-    }, 3000);
-  };
+    }, 4000);
+  } catch (error) {
+    console.error("Error submitting form:", error);
+  }
+};
+
+
 
   if (isSubmitted) {
     return (
@@ -131,7 +163,7 @@ const FreeTrialForm = () => {
           <div className="absolute top-40 right-20 w-72 h-72 bg-teal-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
         </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <div className="relative mt-20 z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center">
             <BookOpen className="w-10 h-10 text-white" />
           </div>

@@ -41,7 +41,7 @@ const ServiceSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-teal-900 to-cyan-900 relative">
+    <section className="py-20 pt-30 mt-0 bg-gradient-to-br from-teal-900 to-cyan-900 relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">

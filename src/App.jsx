@@ -19,6 +19,7 @@ function App() {
     <>
     
       <Navbar />
+      
       <ScrollToTop />
       <Routes>
         
@@ -31,6 +32,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/courses/:id" element={<CourseDetails />} />
       </Routes>
+    
       <Footer />
       <TawkChat />
     </>

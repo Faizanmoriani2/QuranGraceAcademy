@@ -21,7 +21,7 @@ const CoursePage = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-teal-900 via-cyan-800 to-teal-700 overflow-hidden">
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
-          <div className="mb-10">
+          <div className="mb-10 mt-20">
             <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center shadow-xl">
               <BookOpen className="w-12 h-12 text-white" />
             </div>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
+    <section className="py-20 pt-30 bg-gradient-to-br from-gray-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">

@@ -186,7 +186,7 @@ const PricingCards = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 mt-20">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center">

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/Final.png";
+import quranImg from "../assets/quran2.png"; 
 import { motion } from "framer-motion";
-import { Moon, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import bgImage from "../assets/ai-bg.webp"
+import bg from "../assets/bg3.png"; // background image in png format
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const navigate = useNavigate();
+
   const texts = [
     "Empowering Muslim Minds",
     "Through Quranic Education",
@@ -21,103 +21,73 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Floating animation variants
-  const floatAnim = {
-    animate: {
-      y: [0, -10, 0], // up and down
-      rotate: [0, 10, -10, 0], // subtle rotation
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with Quran image + overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={bgImage}
-          alt="Quran background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/70 via-cyan-900/60 to-teal-800/80"></div>
+    <section
+      className="pt-20 mt-0 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay gradient for fading bottom */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/0 to-white"></div>
+      </div>
+      {/* Glowing light background effect */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-[600px] h-[600px] bg-cyan-300/30 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Decorative Animated Elements */}
-      <motion.div
-        variants={floatAnim}
-        animate="animate"
-        className="absolute top-20 left-10 opacity-30 text-cyan-200"
-      >
-        <Moon className="w-12 h-12" />
-      </motion.div>
+      {/* Content in two columns */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-6 max-w-7xl mx-auto w-full gap-12">
+        
+    <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1.2 }}
+  className="flex-1 flex justify-center"
+>
+  <img
+    src={quranImg}
+    alt="Quran"
+    className="w-72 md:w-96 object-contain 
+               drop-shadow-[0_32px_18px_rgba(0,0,0,0.7)] opacity-80"
+  />
+</motion.div>
+        {/* Right Column - Text */}
+        <div className="flex-1 text-center md:text-left">
+          {/* Rotating tagline */}
+          <div className="h-20 flex items-center justify-center md:justify-start mb-4">
+            <p className="text-2xl md:text-3xl font-semibold text-teal-900 transition-all duration-1000">
+              {texts[currentText]}
+            </p>
+          </div>
 
-      <motion.div
-        variants={floatAnim}
-        animate="animate"
-        className="absolute top-80 left-20 opacity-30 text-cyan-200"
-      >
-        <Moon className="w-12 h-12" />
-      </motion.div>
-
-      <motion.div
-        variants={floatAnim}
-        animate="animate"
-        className="absolute bottom-28 right-16 opacity-20 text-yellow-200"
-      >
-        <Star className="w-10 h-10" />
-      </motion.div>
-
-      <motion.div
-        variants={floatAnim}
-        animate="animate"
-        className="absolute top-1/3 right-1/4 opacity-25 text-yellow-100"
-      >
-        <Star className="w-8 h-8" />
-      </motion.div>
-
-      {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto">
-        {/* Logo */}
-        <div className="mb-10 flex justify-center">
-            <img 
-            className="w-62 h-62 md:w-40 md:h-40 object-contain"
-            src={logo} 
-            alt=",ogo" />
-          <div className="mt-10 md:mt-0">
-       
-      </div>
-        </div>
-      
-        {/* Rotating tagline */}
-        <div className="h-20 flex items-center justify-center">
-          <p className="text-2xl md:text-3xl font-light transition-all duration-1000 transform">
-            {texts[currentText]}
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl mb-10 text-gray-700 max-w-xl leading-relaxed mx-auto md:mx-0">
+            Experience personalized Quranic education with certified teachers
+            available 24/7. Begin your spiritual journey with our 3-day free trial.
           </p>
-        </div>
 
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl mb-12 text-cyan-100 max-w-3xl mx-auto leading-relaxed">
-          Experience personalized Quranic education with certified teachers
-          available 24/7. Begin your spiritual journey with our 3-day free trial.
-        </p>
-
-        {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <button onClick={() => navigate('/free-trial')}
-          className="bg-gradient-to-r from-cyan-400 to-teal-400 text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:from-cyan-300 hover:to-teal-300 transform hover:scale-105 transition-all duration-300 shadow-2xl cursor-pointer">
-            Start Free Trial
-          </button>
-          <button onClick={() => navigate('/about')}
-           className="border-2 border-cyan-300 text-cyan-100 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-300 hover:text-gray-900 transition-all duration-300 cursor-pointer">
-            Learn More
-          </button>
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
+            <button
+              onClick={() => navigate("/free-trial")}
+              className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-cyan-400 hover:to-teal-400 transform hover:scale-105 transition-all duration-300 shadow-lg cursor-pointer"
+            >
+              Start Free Trial
+            </button>
+            <button
+              onClick={() => navigate("/about")}
+              className="border-2 border-teal-500 text-teal-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-teal-500 hover:text-white transition-all duration-300 cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
-      
     </section>
   );
 };
