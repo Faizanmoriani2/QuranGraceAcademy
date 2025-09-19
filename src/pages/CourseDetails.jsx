@@ -20,7 +20,7 @@ const CourseDetails = () => {
     <section className="py-20 bg-gradient-to-br from-teal-900 to-cyan-900 text-white px-6">
       <div className="max-w-5xl mx-auto">
         {/* Title */}
-        <h1 className="text-5xl font-bold mb-6">{course.title}</h1>
+        <h1 className="text-5xl font-bold mb-6 pt-20">{course.title}</h1>
         <p className="text-lg mb-8 text-cyan-100">{course.intro}</p>
 
         {/* About */}

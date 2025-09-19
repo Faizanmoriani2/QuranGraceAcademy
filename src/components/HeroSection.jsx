@@ -3,6 +3,7 @@ import quranImg from "../assets/quran.webp";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg.webp"; // background image in png format
+import bgMobile from "../assets/bg-mobile.jpg";
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -23,14 +24,14 @@ const HeroSection = () => {
 
   return (
     <section
-      className="pt-20 mt-0 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
+  className="pt-20 mt-0 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
+  style={{
+    backgroundImage: `url(${window.innerWidth < 768 ? bgMobile : bg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  }}
+>
       {/* Overlay gradient for fading bottom */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/0 to-white"></div>
@@ -52,10 +53,17 @@ const HeroSection = () => {
   <img
     src={quranImg}
     alt="Quran"
-    className="w-72 md:w-96 object-contain 
-               drop-shadow-[0_32px_18px_rgba(0,0,0,0.7)] opacity-80"
+    className="
+      w-48 sm:w-64 md:w-80 lg:w-96 
+      object-contain
+      drop-shadow-[0_16px_10px_rgba(0,0,0,0.5)] 
+      sm:drop-shadow-[0_24px_14px_rgba(0,0,0,0.6)] 
+      md:drop-shadow-[0_32px_18px_rgba(0,0,0,0.7)] 
+      opacity-90
+    "
   />
 </motion.div>
+
         {/* Right Column - Text */}
         <div className="flex-1 text-center md:text-left">
           {/* Rotating tagline */}
