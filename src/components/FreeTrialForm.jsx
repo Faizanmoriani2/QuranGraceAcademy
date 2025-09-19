@@ -154,7 +154,7 @@ const handleSubmit = async (e) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cyan-50 pb-15">
       {/* Hero Section */}
       <div className="relative mb-16 bg-gradient-to-br from-teal-900 via-cyan-800 to-teal-700 py-20 overflow-hidden">
         {/* Animated Background */}
