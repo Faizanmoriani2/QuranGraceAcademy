@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
 
           <nav className="relative z-10">
-            <div className="max-w-6xl mx-auto px-8 py-4 flex justify-between items-center">
+            <div className="max-w-6xl mx-auto px-8 py-2 flex justify-between items-center">
               {/* Logo */}
               {/* Logo */}
               <Link to="/" className="flex items-center space-x-2">
