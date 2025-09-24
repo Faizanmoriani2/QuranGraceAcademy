@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/Final.png";
+import logo from "../assets/logo3.png";
 import { Link, useLocation } from "react-router-dom";
 
 
@@ -23,10 +23,10 @@ const Navbar = () => {
       {/* Background with Islamic curves and patterns */}
       <div className="absolute top-0 left-0 w-full z-50 px-8 pt-8">
         {/* Main navbar container with Islamic design */}
-        <div className="relative bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-500 rounded-3xl shadow-2xl overflow-hidden mx-auto max-w-6xl">
+        <div className="relative bg-gradient-to-r from-teal-500/30 via-cyan-500/40 to-teal-500/20 rounded-3xl shadow-2xl overflow-hidden mx-auto max-w-6xl">
           
-          {/* Islamic geometric background patterns */}
-          <div className="absolute inset-0 overflow-hidden">
+          {/* Islamic geometric background patterns - Hidden on mobile */}
+          <div className="absolute inset-0 overflow-hidden hidden md:block">
             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 100" fill="none">
               {/* Top flowing curves */}
               <path
@@ -71,7 +71,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Quran Grace Academy Logo"
-                  className="h-12 w-auto"
+                  className="h-12 w-auto object-contain cursor-pointer"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 />
               </Link>

@@ -1,21 +1,45 @@
 import { Facebook, Instagram, Phone, Mail, Music2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "../assets/FooterLogo2.png";
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-teal-900 text-cyan-100 py-12 p-10">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-        {/* Social Links */}
+        
+        {/* Logo + Social Links */}
         <div>
+          {/* Logo */}
+          <div className="mb-6">
+            <img 
+              src={logo} 
+              alt="Quran Graceful Academy" 
+              className="w-40 md:w-48 lg:w-56 object-contain"
+            />
+          </div>
+
+          {/* Social Links */}
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=100023338110553&rdid=LXzZqcRG2g9b32uQ" target="_blank" rel="noreferrer">
+            <a 
+              href="https://www.facebook.com/profile.php?id=100023338110553&rdid=LXzZqcRG2g9b32uQ" 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <Facebook className="w-6 h-6 hover:text-cyan-400 transition" />
             </a>
-            <a href="https://www.instagram.com/quran_graceful_academy?igsh=MTVpN2ZuOHU1OXo2aA==" target="_blank" rel="noreferrer">
+            <a 
+              href="https://www.instagram.com/quran_graceful_academy?igsh=MTVpN2ZuOHU1OXo2aA==" 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <Instagram className="w-6 h-6 hover:text-cyan-400 transition" />
             </a>
-            <a href="https://www.tiktok.com/@quran_graceful_academy?_t=ZT-8w5JUf3PaDm&_r=1" target="_blank" rel="noreferrer">
+            <a 
+              href="https://www.tiktok.com/@quran_graceful_academy?_t=ZT-8w5JUf3PaDm&_r=1" 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <Music2 className="w-6 h-6 hover:text-cyan-400 transition" />
             </a>
           </div>

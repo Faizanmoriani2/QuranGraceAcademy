@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg.webp"; // background image in png format
 import bgMobile from "../assets/bg-mobile.jpg";
+import logo from "../assets/logo4.png";
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -24,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <section
-  className="pt-20 mt-0 relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
+  className="pt-20 mt-0 relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
   style={{
     backgroundImage: `url(${window.innerWidth < 768 ? bgMobile : bg})`,
     backgroundSize: "cover",
@@ -40,6 +41,20 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[600px] h-[600px] bg-cyan-300/30 rounded-full blur-3xl"></div>
       </div>
+
+      {/* Logo at the top */}
+      <img
+    src={logo}
+    alt="logo"
+    className="
+      w-48 mt-10 sm:w-64 md:w-80 lg:w-96 
+      object-contain
+      drop-shadow-[0_10px_8px_rgba(0,0,0,0.5)] 
+      sm:drop-shadow-[0_24px_14px_rgba(0,0,0,0.6)] 
+      md:drop-shadow-[0_32px_18px_rgba(0,0,0,0.7)] 
+      opacity-90
+    "
+  />
 
       {/* Content in two columns */}
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-6 max-w-7xl mx-auto w-full gap-12">
