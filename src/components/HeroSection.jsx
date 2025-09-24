@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import quranImg from "../assets/quran.png"; 
+import quranImg from "../assets/quran2.png"; 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/bg.webp"; 
@@ -99,11 +99,11 @@ const HeroSection = () => {
         <h1 className="font-Alfa text-2xl sm:text-3xl text-teal-700  text-center drop-shadow-2xl mt-10">
           Welcome to <br /> Quran Graceful Academy
         </h1>
-        <h1 className="text-5xl text-gray-700 text-center max-w-md font-Imperial">
+        <h1 className="text-5xl text-center max-w-md font-Imperial">
           <ShinyText 
             text="Recite with us!" 
             disabled={false} 
-            speed={3} 
+            speed={2} 
             className='custom-class' 
           />
           
