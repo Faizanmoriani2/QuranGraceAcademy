@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import CourseDetails from "./pages/CourseDetails.jsx";
 import TawkChat from "./components/TawkChat.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         
         <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/courses" element={<CoursePage />} />
@@ -31,6 +33,7 @@ function App() {
         <Route path="/free-trial" element={<FreeTrialPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/courses/:id" element={<CourseDetails />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     
       <Footer />
