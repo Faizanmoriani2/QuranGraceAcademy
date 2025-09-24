@@ -96,7 +96,7 @@ const HeroSection = () => {
       {/* Mobile Layout */}
       <div className="relative z-10 flex flex-col items-center justify-center px-6 w-full gap-6 md:hidden">
         {/* Welcome text */}
-        <h1 className="font-Alfa text-2xl sm:text-3xl text-teal-700  text-center drop-shadow-2xl">
+        <h1 className="font-Alfa text-2xl sm:text-3xl text-teal-700  text-center drop-shadow-2xl mt-10">
           Welcome to <br /> Quran Graceful Academy
         </h1>
         <h1 className="text-5xl text-gray-700 text-center max-w-md font-Imperial">
