@@ -23,7 +23,7 @@ const Navbar = () => {
       {/* Background with Islamic curves and patterns */}
       <div className="absolute top-0 left-0 w-full z-50 px-8 pt-8">
         {/* Main navbar container with Islamic design */}
-        <div className="relative bg-gradient-to-r from-teal-500/30 via-cyan-500/40 to-teal-500/20 rounded-3xl shadow-2xl overflow-hidden mx-auto max-w-6xl">
+        <div className="relative bg-gradient-to-r from-teal-500/80 via-cyan-500/60 to-teal-500/70 rounded-3xl shadow-2xl overflow-hidden mx-auto max-w-6xl">
           
           {/* Islamic geometric background patterns - Hidden on mobile */}
           <div className="absolute inset-0 overflow-hidden hidden md:block">
@@ -74,6 +74,7 @@ const Navbar = () => {
                   className="h-12 w-auto object-contain cursor-pointer"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 />
+                <h3 className="font-bold sm: text-sm">Quran Graceful Academy</h3>
               </Link>
 
               {/* Desktop Menu */}
