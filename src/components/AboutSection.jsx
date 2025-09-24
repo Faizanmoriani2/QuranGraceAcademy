@@ -17,7 +17,7 @@ const AboutSection = () => {
         {/* Main content */}
         <div className="flex flex-col lg:flex-row gap-12 lg:items-start">
           {/* Left side image */}
-          <div className="flex-1 flex justify-center lg:justify-start">
+          <div className="sm:hidden flex-1 flex justify-center lg:justify-start">
             <img
               src={image}
               alt="Quran Graceful Academy"

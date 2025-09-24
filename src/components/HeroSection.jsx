@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import quranImg from "../assets/quran2.png"; 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/bg.webp"; 
+import bg from "../assets/bg2.jpg"; 
 import bgMobile from "../assets/bg-mobile2.png";
-import logo from "../assets/logo4.png";
+import image from "../assets/image.png";
 import ShinyText from "../animation/ShinyText.jsx";
 
 const HeroSection = () => {
@@ -29,7 +29,7 @@ const HeroSection = () => {
   className="pt-8 md:pt-20 mt-0 relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
   style={{
     backgroundImage: `url(${window.innerWidth < 768 ? bgMobile : bg})`,
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   }}
@@ -45,53 +45,64 @@ const HeroSection = () => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="relative z-10 hidden md:flex flex-col md:flex-row items-center justify-between px-6 max-w-7xl mx-auto w-full gap-12">
-        {/* Left - Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
-          className="flex-1 flex justify-center"
-        >
-          <img
-            src={quranImg}
-            alt="Quran"
-            className="w-48 sm:w-64 md:w-80 lg:w-96 object-contain drop-shadow-[0_32px_18px_rgba(0,0,0,0.7)] opacity-90"
-          />
-        </motion.div>
+     {/* Desktop Layout */}
+<div className="relative z-10 hidden md:grid grid-cols-3 items-center justify-between px-6 max-w-7xl mx-auto w-full gap-12">
+  {/* Left - Quran Image */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1.2 }}
+    className="flex justify-center items-center"
+  >
+    <img
+      src={quranImg}
+      alt="Quran"
+      className="w-48 sm:w-64 md:w-80 lg:w-96 object-contain drop-shadow-[0_32px_18px_rgba(0,0,0,0.7)] opacity-90"
+    />
+  </motion.div>
 
-        {/* Right - Text */}
-        <div className="flex-1 text-center md:text-left">
-          {/* Rotating tagline */}
-          <div className="h-20 flex items-center justify-center md:justify-start mb-4">
-            <p className="text-2xl md:text-3xl font-semibold text-teal-900 transition-all duration-1000">
-              {texts[currentText]}
-            </p>
-          </div>
+  {/* Middle - Text */}
+  <div className="flex flex-col text-center md:text-left items-center md:items-start">
+    {/* Rotating tagline */}
+    <div className="h-20 flex items-center justify-center md:justify-start mb-4">
+      <p className="text-2xl md:text-3xl font-Alfa text-teal-800 transition-all duration-1000">
+        {texts[currentText]}
+      </p>
+    </div>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl mb-10 text-gray-700 max-w-xl leading-relaxed mx-auto md:mx-0">
-            Experience personalized Quranic education with certified teachers
-            available 24/7. Begin your spiritual journey with our 3-day free trial.
-          </p>
+    {/* Subtitle */}
+    <p className="text-lg md:text-xl mb-10 text-gray-700 max-w-xl leading-relaxed">
+      
+      Experience personalized Quranic education with certified teachers
+      available 24/7. Begin your spiritual journey with our 3-day free trial.
+    </p>
 
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
-            <button
-              onClick={() => navigate("/free-trial")}
-              className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-cyan-400 hover:to-teal-400 transform hover:scale-105 transition-all duration-300 shadow-lg cursor-pointer"
-            >
-              Start Free Trial
-            </button>
-            <button
-              onClick={() => navigate("/about")}
-              className="border-2 border-teal-500 text-teal-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-teal-500 hover:text-white transition-all duration-300 cursor-pointer"
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
-      </div>
+    {/* CTA buttons */}
+    <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
+      <button
+        onClick={() => navigate("/free-trial")}
+        className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-cyan-400 hover:to-teal-400 transform hover:scale-105 transition-all duration-300 shadow-lg cursor-pointer"
+      >
+        Start Free Trial
+      </button>
+      <button
+        onClick={() => navigate("/about")}
+        className="border-2 border-teal-500 text-teal-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-teal-500 hover:text-white transition-all duration-300 cursor-pointer"
+      >
+        Learn More
+      </button>
+    </div>
+  </div>
+
+  {/* Right - Image bottom aligned */}
+  <div className="flex items-end justify-center md:justify-end">
+    <img
+      src={image}
+      alt="Quran Graceful Academy"
+      className="w-full self-end   max-w-sm object-contain h-auto drop-shadow-[0_10px_12px_rgba(0,0,0,0.7)]"
+    />
+  </div>
+</div>
 
       {/* Mobile Layout */}
       <div className="relative z-10 flex flex-col items-center justify-center px-6 w-full gap-6 md:hidden">
