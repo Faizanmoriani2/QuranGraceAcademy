@@ -29,7 +29,7 @@ const HeroSection = () => {
   className="pt-8 md:pt-20 mt-0 relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-cyan-200"
   style={{
     backgroundImage: `url(${window.innerWidth < 768 ? bgMobile : bg})`,
-    backgroundSize: "contain",
+    backgroundSize: window.innerWidth < 768 ? "cover" : "contain",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   }}

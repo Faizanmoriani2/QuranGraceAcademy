@@ -22,7 +22,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-4">
             <a 
-              href="https://www.facebook.com/profile.php?id=100023338110553&rdid=LXzZqcRG2g9b32uQ" 
+              href="https://www.facebook.com/share/1AM6rDG45T/" 
               target="_blank" 
               rel="noreferrer"
             >
